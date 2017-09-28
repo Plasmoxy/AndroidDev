@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Sajuuz 2.0</string>
+
+     <string name="zdrastvuj">"Здравствуй товарищ\nUse this as weapon against germans."</string>
+
+    <string name="large_text">
+       "
+Soiuz nerushimyj respublik svobodnykh
+Splotila naveki Velikaia Rus.
+Da zdravstvuet sozdannyj volej narodov
+Edinyj, moguchij Sovetskij Soiuz!
+
+Slavsia, Otechestvo nashe svobodnoe,
+Druzhby, narodov nadezhnyj oplot!
+Znamia sovetskoe, znamia narodnoe
+Pust ot pobedy, k pobede vedet!
+
+Skvoz grozy siialo nam solntse svobody,
+I Lenin velikij nam put ozaril.
+Nas vyrastil Stalin - na vernost narodu
+Na trud i na podvigi nas vdokhnovil.
+
+Slavsia, Otechestvo chashe svobodnoe,
+Schastia narodov nadezhnyj oplot!
+Znamia sovetskoe, znamia narodnoe
+Pust ot pobedy k pobede vedet!
+
+My armiiu nashu rastili v srazheniakh,
+Zakhvatchikov podlykh s dorogi smetem!
+My v bitvakh reshaem sudbu pokolenij,
+My k slave Otchiznu svoiu povedem!
+
+Slavsia, Otechestvo nashe svobodnoe,
+Slavy narodov nadezhnyj oplot!
+Znamia sovetskoe, znamia narodnoe
+Pust ot pobedy k pobede vedet!
+
+SUCC
+
+App made by Sebastian Petrik xDDD
+
+"
+
+
+    </string>
+    <string name="action_settings">Goodbye in Russian</string>
+</resources>
