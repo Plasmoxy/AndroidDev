@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "io.github.plasmoxy.begin.helloworld"
-        minSdkVersion 16
+        minSdkVersion 15
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -18,6 +18,8 @@ android {
     }
 }
 
+//def AAVersion = '4.4.0'
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:26.1.0'
@@ -25,4 +27,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    /*
+    annotationProcessor "org.androidannotations:androidannotations:$AAVersion"
+    implementation "org.androidannotations:androidannotations-api:$AAVersion"
+    */
+
+	implementation 'com.google.android.gms:play-services-maps:15.0.0'
 }
