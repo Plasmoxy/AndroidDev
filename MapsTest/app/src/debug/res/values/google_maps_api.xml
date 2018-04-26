@@ -1,0 +1,24 @@
+<resources>
+	<!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=1A:D6:A2:54:59:CC:22:12:98:F4:34:B4:48:02:54:06:75:15:EF:02%3Bio.github.plasmoxy.begin.mapstest
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    1A:D6:A2:54:59:CC:22:12:98:F4:34:B4:48:02:54:06:75:15:EF:02
+
+    SHA-1 certificate fingerprint:
+    1A:D6:A2:54:59:CC:22:12:98:F4:34:B4:48:02:54:06:75:15:EF:02
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+	<string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyAqolgl3QLCaBEncihwQ66O8BqTcx7qYRQ</string>
+</resources>
