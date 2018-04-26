@@ -93,7 +93,7 @@ public class MapsActivity
 			currentLocationMarker.remove();
 		}
 
-		LatLng latLng = new LatLng(location.getLatitude(), location.getLatitude());
+		LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
 
 		MarkerOptions markerOptions = new MarkerOptions();
 		markerOptions.position(latLng);
@@ -104,6 +104,8 @@ public class MapsActivity
 		
 		mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
 		mMap.animateCamera(CameraUpdateFactory.zoomBy(10));
+		
+		LocationServices.FusedLocationApi.removeLocationUpdates(client, this);
 		
 	}
 
