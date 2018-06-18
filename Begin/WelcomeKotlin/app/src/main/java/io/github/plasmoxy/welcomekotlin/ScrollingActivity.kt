@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_scrolling.*
+import kotlinx.android.synthetic.main.content_scrolling.*
 
 class ScrollingActivity : AppCompatActivity() {
 
@@ -13,10 +14,15 @@ class ScrollingActivity : AppCompatActivity() {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_scrolling)
 		setSupportActionBar(toolbar)
+		
 		fab.setOnClickListener { view ->
-			Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-					.setAction("Action", null).show()
+			Snackbar.make(view, "by Plasmoxy", Snackbar.LENGTH_LONG).show()
 		}
+        
+        randomButton.setOnClickListener { view ->
+            Snackbar.make(view, Math.random().toString(), Snackbar.LENGTH_SHORT).show()
+        }
+		
 	}
 
 	override fun onCreateOptionsMenu(menu: Menu): Boolean {
