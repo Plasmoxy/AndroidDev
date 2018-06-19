@@ -21,15 +21,14 @@
 			android:layout_height="wrap_content"
 			android:text="Random number" />
 
-		<TextView
-			android:id="@+id/lorem"
+		<Switch
+			android:id="@+id/switch1"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_margin="10dp"
-			android:text="@string/large_text"
-			android:textAlignment="viewStart"
-			android:textColor="@android:color/white"
-			android:textSize="14sp" />
+			android:layout_margin="20dp"
+			android:text="Switch"
+			android:textAlignment="textStart"
+			android:textColor="#fff" />
 
 	</LinearLayout>
 </android.support.v4.widget.NestedScrollView>
