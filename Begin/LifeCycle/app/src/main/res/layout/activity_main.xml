@@ -47,9 +47,10 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_marginBottom="44dp"
-		android:layout_marginStart="66dp"
+		android:layout_marginStart="13dp"
 		android:text="anko dialog"
 		app:layout_constraintBottom_toTopOf="@+id/infoTextView"
+		app:layout_constraintEnd_toStartOf="@+id/snackButton"
 		app:layout_constraintStart_toStartOf="parent" />
 
 	<Button
@@ -71,5 +72,16 @@
 		android:text="anko progress"
 		app:layout_constraintBottom_toTopOf="@+id/mainButton"
 		app:layout_constraintStart_toStartOf="parent" />
+
+	<Button
+		android:id="@+id/snackButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="16dp"
+		android:layout_marginEnd="10dp"
+		android:text="anko snackbar"
+		app:layout_constraintBottom_toTopOf="@+id/infoTextView"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toEndOf="@+id/dialogButton" />
 
 </android.support.constraint.ConstraintLayout>

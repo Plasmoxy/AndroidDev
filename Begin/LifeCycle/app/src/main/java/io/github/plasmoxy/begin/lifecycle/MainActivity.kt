@@ -1,10 +1,13 @@
 package io.github.plasmoxy.begin.lifecycle
 
 import android.os.Bundle
+import android.os.Handler
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.*
+import org.jetbrains.anko.design.snackbar
 import kotlin.properties.Delegates.observable
 
 class MainActivity : AppCompatActivity() {
@@ -47,8 +50,25 @@ class MainActivity : AppCompatActivity() {
         }
         
         progressButton.setOnClickListener {
-            val dialog = progressDialog(message = "Please wait a bit…", title = "Fetching data")
+            val dialog = progressDialog(message = "Please wait a bit…", title = "Destroying the entire universe")
             
+            dialog.setOnDismissListener { 
+                toast("progress complete")
+            }
+
+            var h = Handler()
+            h.post( object : Runnable {
+                override fun run() {
+                    Log.d("SEBB", "HANDLER RUNNING -> $dialog.progress")
+                    dialog.incrementProgressBy(1)
+                    if (dialog.progress < dialog.max) h.postDelayed(this, 100)
+                    else dialog.dismiss()
+                }
+            })
+        }
+        
+        snackButton.setOnClickListener { 
+            snackbar(it, "YO A FAGGOT").show()
         }
         
         toast("app started")
