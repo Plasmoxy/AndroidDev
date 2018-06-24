@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="?attr/backgroundColor"
+	tools:context=".MainActivity"
+	tools:layout_editor_absoluteY="81dp">
+
+	<TextView
+		android:id="@+id/infoTextView"
+		android:layout_width="wrap_content"
+		android:layout_height="0dp"
+		android:layout_marginEnd="152dp"
+		android:layout_marginTop="212dp"
+		android:text="none"
+		android:textAllCaps="false"
+		android:textSize="36sp"
+		android:textStyle="bold|italic"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<Button
+		android:id="@+id/mainButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="148dp"
+		android:layout_marginTop="372dp"
+		android:text="random"
+		android:textAllCaps="false"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<Button
+		android:id="@+id/toastButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="236dp"
+		android:layout_marginTop="72dp"
+		android:text="toast"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<Button
+		android:id="@+id/dialogButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="44dp"
+		android:layout_marginStart="66dp"
+		android:text="anko dialog"
+		app:layout_constraintBottom_toTopOf="@+id/infoTextView"
+		app:layout_constraintStart_toStartOf="parent" />
+
+	<Button
+		android:id="@+id/selectorButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="20dp"
+		android:layout_marginEnd="13dp"
+		android:text="anko selector"
+		app:layout_constraintBottom_toBottomOf="@+id/toastButton"
+		app:layout_constraintEnd_toStartOf="@+id/toastButton" />
+
+	<Button
+		android:id="@+id/progressButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="21dp"
+		android:layout_marginStart="47dp"
+		android:text="anko progress"
+		app:layout_constraintBottom_toTopOf="@+id/mainButton"
+		app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
