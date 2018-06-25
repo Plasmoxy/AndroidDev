@@ -53,8 +53,10 @@ class MainActivity : AppCompatActivity() {
             val dialog = progressDialog(message = "Please wait a bit…", title = "Destroying the entire universe")
             
             dialog.setOnDismissListener { 
-                toast("progress complete")
+                toast("progress dismissed")
             }
+            
+            
 
             var h = Handler()
             h.post( object : Runnable {
