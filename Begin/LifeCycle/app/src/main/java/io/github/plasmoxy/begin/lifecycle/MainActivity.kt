@@ -55,8 +55,6 @@ class MainActivity : AppCompatActivity() {
             dialog.setOnDismissListener { 
                 toast("progress dismissed")
             }
-            
-            
 
             var h = Handler()
             h.post( object : Runnable {
@@ -73,6 +71,27 @@ class MainActivity : AppCompatActivity() {
             snackbar(it, "YO A FAGGOT").show()
         }
         
-        toast("app started")
+        toast("LifeCycle Started")
+    }
+    
+    
+    override fun onPause() {
+        toast("LifeCycle Paused")
+        super.onPause()
+    }
+    
+    override fun onResume() {
+        super.onResume()
+        toast("LifeCycle Resumed")
+    }
+    
+    override fun onStop() {
+        toast("LifeCycle Stopped")
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        toast("LifeCycle Destroyed")
+        super.onDestroy()
     }
 }
