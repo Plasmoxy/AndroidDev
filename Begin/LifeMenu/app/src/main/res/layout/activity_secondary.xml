@@ -22,5 +22,19 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/timeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="loading..."
+            android:textAlignment="center"
+            android:textSize="36sp" />
+
+        <TextView
+            android:id="@+id/logTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="connecting ..." />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
