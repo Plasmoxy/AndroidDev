@@ -72,9 +72,13 @@ class MainActivity : AppCompatActivity() {
             snackbar(it, "YO A FAGGOT").show()
         }
         
-        toast("LifeCycle Started")
+        toast("LifeCycle Created")
     }
-    
+
+    override fun onStart() {
+        toast("LifeCycle Started")
+        super.onStart()
+    }
     
     override fun onPause() {
         toast("LifeCycle Paused")
