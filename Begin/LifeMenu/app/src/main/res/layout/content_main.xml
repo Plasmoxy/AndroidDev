@@ -62,7 +62,7 @@
             android:id="@+id/buttonLaunchSecondary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="show value" />
+            android:text="start intent" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
