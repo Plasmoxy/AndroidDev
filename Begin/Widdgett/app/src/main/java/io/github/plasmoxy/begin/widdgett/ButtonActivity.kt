@@ -2,7 +2,7 @@ package io.github.plasmoxy.begin.widdgett
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_button.*
 
 class ButtonActivity : AppCompatActivity() {
 
@@ -10,8 +10,6 @@ class ButtonActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_button)
         
-        editTextName.setOnFocusChangeListener { v, hasFocus ->
-            
-        }
+        buttonLayout.addView(XDButton(this, buttonLayout, 0))
     }
 }

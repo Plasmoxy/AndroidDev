@@ -1,5 +1,6 @@
 package io.github.plasmoxy.begin.widdgett
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
@@ -23,6 +24,10 @@ class MainActivity : AppCompatActivity() {
         
         editTextName.setOnFocusChangeListener(scrollToCardListener)
         editTextPassword.setOnFocusChangeListener(scrollToCardListener)
+        
+        buttonLogIn.setOnClickListener {
+            startActivity(Intent(this, ButtonActivity::class.java))
+        }
     }
     
 }
