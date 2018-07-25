@@ -7,24 +7,35 @@
     tools:context=".MainActivity">
 
     <ScrollView
-        android:id="@+id/scrollView3"
+        android:id="@+id/coreScroll"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbarStyle="outsideOverlay"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:scrollbarStyle="outsideOverlay"
-        android:fillViewport="true" >
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:id="@+id/buttonLayout"
+            android:id="@+id/coreLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center" >
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="image of shardbytes"
+                android:cropToPadding="false"
+                app:srcCompat="@drawable/transplanetcut" />
 
             <android.support.v7.widget.CardView
+                android:id="@+id/cardViewLogin"
+                style="@style/CoreCardStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp">
@@ -39,7 +50,9 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true">
 
                         <TextView
                             android:id="@+id/textViewName"
@@ -55,7 +68,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName" />
+                            android:inputType="textPersonName"
+                            android:singleLine="true"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -77,17 +91,18 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName" />
+                            android:inputType="textPassword"
+                            android:singleLine="true"/>
 
                     </LinearLayout>
 
                     <Button
-                        android:id="@+id/button3"
+                        android:id="@+id/buttonLogIn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:layout_weight="1"
-                        android:text="Button" />
+                        android:text="Log in" />
                 </LinearLayout>
             </android.support.v7.widget.CardView>
         </LinearLayout>

@@ -1,12 +1,19 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat">
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorBackground">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        
         <item name="android:colorControlHighlight">@color/colorAccent</item> <!-- this is ultra cool <3 -->
+        <item name="cardViewStyle">@style/CardView</item>
+    </style>
+    
+    <style name="CoreCardStyle" parent="Theme.AppCompat.NoActionBar">
+        <item name="cardBackgroundColor">@color/colorPrimary</item>
     </style>
 
 </resources>
