@@ -12,6 +12,7 @@ class XDButton(private val ctx: Context,
     init {
         text = value.toString()
         layoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
+        //background = ContextCompat.getDrawable(ctx, R.drawable.xdbutton)
         setOnClickListener {multiply()}
     }
     
