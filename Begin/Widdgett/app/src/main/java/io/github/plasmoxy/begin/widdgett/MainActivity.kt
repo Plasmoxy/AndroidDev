@@ -1,10 +1,13 @@
 package io.github.plasmoxy.begin.widdgett
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.alert
+import org.jetbrains.anko.intentFor
+import org.jetbrains.anko.okButton
+import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity() {
     
@@ -15,6 +18,35 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+    
+    private fun login() {
+        if (editTextName.text.isEmpty() || editTextPassword.text.isEmpty()) {
+            alert("Please enter your name and password !"){ okButton {} }.show()
+            return
+        }
+
+        val loginTask = LoginTask {
+            //toast(it).show()
+            when (it) {
+                
+                "OK LOGIN" -> {
+                    startActivity(intentFor<ButtonActivity>("passhash" to "XD"))
+                    finish()
+                }
+                
+                "ERROR WRONG HASH" -> {
+                    alert("Wrong password !") { okButton {} }.show()
+                }
+                
+                "@ERROR:NO_USER" -> {
+                    alert("This user does not exist!") { okButton {} }.show()
+                }
+                
+            }
+        }
+
+        loginTask.execute(editTextName.text.toString(), editTextPassword.text.toString())
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,9 +55,17 @@ class MainActivity : AppCompatActivity() {
         editTextName.setOnFocusChangeListener(scrollToCardListener)
         editTextPassword.setOnFocusChangeListener(scrollToCardListener)
         
+        buttonLogIn.setOnClickListener { login() }
+        editTextPassword.setOnEditorActionListener { v, actionId, event -> 
+            login()
+            false // block rest of the event ?
+        }
+        
+        /*
         buttonLogIn.setOnClickListener {
             startActivity(Intent(this, ButtonActivity::class.java))
         }
+        */
     }
     
 }
