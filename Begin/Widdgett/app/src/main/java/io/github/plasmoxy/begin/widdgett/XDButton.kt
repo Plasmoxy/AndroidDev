@@ -1,6 +1,7 @@
 package io.github.plasmoxy.begin.widdgett
 
 import android.content.Context
+import android.support.v4.content.ContextCompat
 import android.view.ViewGroup.LayoutParams
 import android.widget.Button
 import android.widget.LinearLayout
@@ -12,8 +13,8 @@ class XDButton(private val ctx: Context,
     init {
         text = value.toString()
         layoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
-        //background = ContextCompat.getDrawable(ctx, R.drawable.xdbutton)
-        setOnClickListener {multiply()}
+        // background = ContextCompat.getDrawable(ctx, R.drawable.aquabutton) nope bad idea
+        setOnClickListener { multiply() }
     }
     
     fun multiply() {

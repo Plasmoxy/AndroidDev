@@ -7,7 +7,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.okButton
-import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity() {
     

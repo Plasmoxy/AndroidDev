@@ -12,8 +12,14 @@
         <item name="cardViewStyle">@style/CardView</item>
     </style>
     
-    <style name="CoreCardStyle" parent="Theme.AppCompat.NoActionBar">
+    <style name="CoreCardStyle" parent="AppTheme">
         <item name="cardBackgroundColor">@color/colorPrimary</item>
+    </style>
+    
+    <style name="AquamarineButtonTheme" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:backgroundTint">@color/colorAccentDarker</item>
+        <item name="android:colorControlHighlight">@color/colorPrimaryDark</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
     </style>
 
 </resources>
