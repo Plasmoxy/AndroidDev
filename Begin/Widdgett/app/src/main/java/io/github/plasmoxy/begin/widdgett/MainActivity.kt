@@ -28,12 +28,12 @@ class MainActivity : AppCompatActivity() {
             //toast(it).show()
             when (it) {
                 
-                "OK LOGIN" -> {
+                "OK_LOGIN" -> {
                     startActivity(intentFor<ButtonActivity>("passhash" to "XD"))
                     finish()
                 }
                 
-                "ERROR WRONG HASH" -> {
+                "@ERROR:WRONG_HASH" -> {
                     alert("Wrong password !") { okButton {} }.show()
                 }
                 

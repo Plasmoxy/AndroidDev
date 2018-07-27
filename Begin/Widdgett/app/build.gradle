@@ -36,8 +36,8 @@ dependencies {
     // anko
     implementation 'org.jetbrains.anko:anko:0.10.5'
 
-    // ok
-    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    // fuel
+    implementation 'com.github.kittinunf.fuel:fuel-android:1.14.0'
     
     // klaxon
     implementation 'com.beust:klaxon:3.0.1'
