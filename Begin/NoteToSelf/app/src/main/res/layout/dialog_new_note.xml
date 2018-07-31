@@ -1,40 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <EditText
         android:id="@+id/editTextNoteTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/title_hint"
         android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNoteDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/description_hint"
         android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNoteTitle" />
 
     <CheckBox
         android:id="@+id/checkBoxIdea"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="35dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="32dp"
         android:text="@string/idea_checkbox"
+        app:layout_constraintEnd_toStartOf="@+id/checkBoxTodo"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNoteDescription" />
 
@@ -42,35 +50,41 @@
         android:id="@+id/checkBoxTodo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="19dp"
+        android:layout_marginTop="32dp"
         android:text="@string/todo_checkbox"
-        app:layout_constraintStart_toStartOf="@+id/checkBoxIdea"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxIdea" />
+        app:layout_constraintEnd_toStartOf="@+id/checkNewImportant"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxIdea"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNoteDescription" />
 
     <CheckBox
         android:id="@+id/checkNewImportant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="72dp"
+        android:layout_marginTop="32dp"
         android:text="@string/important_checkbox"
-        app:layout_constraintStart_toStartOf="@+id/checkBoxTodo"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxTodo" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxTodo"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNoteDescription" />
 
     <Button
         android:id="@+id/buttonCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="18dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="42dp"
         android:text="@string/cancel_button"
         app:layout_constraintEnd_toStartOf="@+id/buttonOk"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkNewImportant" />
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxTodo" />
 
     <Button
         android:id="@+id/buttonOk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="13dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="42dp"
         android:text="@string/ok_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonCancel"
