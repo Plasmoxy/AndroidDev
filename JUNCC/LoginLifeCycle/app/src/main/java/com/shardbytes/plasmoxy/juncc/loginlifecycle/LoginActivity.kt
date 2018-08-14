@@ -6,6 +6,7 @@ import com.shardbytes.plasmoxy.juncc.loginlifecycle.login.CheckLoginTask
 import com.shardbytes.plasmoxy.juncc.loginlifecycle.login.LoginAssemblerTask
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.alert
+import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.okButton
 import org.jetbrains.anko.toast
 
@@ -34,11 +35,21 @@ class LoginActivity : AppCompatActivity() {
                 return@runOnUiThread
             }
 
-            CheckLoginTask(data) { result -> runOnUiThread {
+            CheckLoginTask(data) { runOnUiThread { when (it) {
                 
-                toast(result)
-                
-            }}.execute()
+                "OK_LOGIN" -> {
+                    alert("Ok login.") { okButton {} }.show()
+                }
+
+                "@ERROR:WRONG_HASH" -> {
+                    alert("Wrong password !") { okButton {} }.show()
+                }
+
+                "@ERROR:NO_USER" -> {
+                    alert("This user does not exist!") { okButton {} }.show()
+                }
+
+            }}}.execute()
         }}.execute()
     }
     
