@@ -8,7 +8,8 @@ import java.security.MessageDigest
 
 // takes name and password Pair, puts salt in it, returns credentialdata
 
-class LoginAssemblerTask(private val credentials: Pair<String, String>, private val callback: (CredentialsData?) -> Unit) : AsyncTask<Void, Void, Void>() {
+class LoginAssemblerTask(private val credentials: Pair<String, String>,
+                         private val callback: (CredentialsData?) -> Unit) : AsyncTask<Void, Void, Void>() {
     
     private val SALT_HOST = "https://shardbytes.com/logintest/salt"
 

@@ -7,6 +7,7 @@ import android.util.Log
 import com.shardbytes.plasmoxy.juncc.loginlifecycle.login.CheckLoginTask
 import com.shardbytes.plasmoxy.juncc.loginlifecycle.model.CredentialsData
 import org.jetbrains.anko.*
+import java.io.Serializable
 
 class InitActivity : AppCompatActivity() {
 
@@ -24,24 +25,21 @@ class InitActivity : AppCompatActivity() {
             // json ? too slow for ez usage, serialization ? rather not, default android ? yes
             val pref = getSharedPreferences("settings", Context.MODE_PRIVATE)
             
-            val credentials = CredentialsData(
+            val credentialsData = CredentialsData(
                     pref.getString("name", ""),
                     pref.getString("passwordHash", "")
             )
             
-            if (credentials.name == "") {
-                Log.i("core", "empty name in pref")
+            if (credentialsData.name == "") {
+                Log.i("core", "no name in preferences, launching login")
                 uiThread { launchLogin() }
                 return@doAsync
             }
             
             // here we should have credentials available, we try login with asynctask
-            CheckLoginTask(credentials) { result -> uiThread { when (result) {
+            CheckLoginTask(credentialsData) { result -> uiThread { when (result) {
                 
-                "OK_LOGIN" -> {
-                    toast("ok login, defaulting to loginscreen")
-                    launchLogin()
-                }
+                "OK_LOGIN" -> launchMain(credentialsData)
                 else -> launchLogin()
                 
             }}}.execute()
@@ -54,8 +52,13 @@ class InitActivity : AppCompatActivity() {
     // if something goes wrong, just ask for login again
     private fun launchLogin() {
         Log.i("core", "launch login activity")
-        toast("launch login")
         startActivity(intentFor<LoginActivity>("name" to ""))
+        finish()
+    }
+    
+    private fun launchMain(credentialsData: CredentialsData) {
+        Log.i("core", "launch main activity")
+        startActivity(intentFor<MainActivity>("credentialsData" to credentialsData as Serializable))
         finish()
     }
     

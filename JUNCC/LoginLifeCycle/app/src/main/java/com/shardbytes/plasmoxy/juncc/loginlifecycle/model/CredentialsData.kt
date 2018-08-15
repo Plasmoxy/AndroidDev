@@ -1,3 +1,5 @@
 package com.shardbytes.plasmoxy.juncc.loginlifecycle.model
 
-data class CredentialsData(val name: String, val passwordHash: String)
+import java.io.Serializable
+
+data class CredentialsData(val name: String, val passwordHash: String) : Serializable

@@ -4,7 +4,8 @@ import android.os.AsyncTask
 import com.github.kittinunf.fuel.httpPost
 import com.shardbytes.plasmoxy.juncc.loginlifecycle.model.CredentialsData
 
-class CheckLoginTask(private val credentialsData: CredentialsData, private val callback: (String) -> Unit) : AsyncTask<Void, Void, Void>() {
+class CheckLoginTask(private val credentialsData: CredentialsData,
+                     private val callback: (String) -> Unit) : AsyncTask<Void, Void, Void>() {
     
     private val CHECK_LOGIN_HOST = "https://shardbytes.com/logintest/login"
 
