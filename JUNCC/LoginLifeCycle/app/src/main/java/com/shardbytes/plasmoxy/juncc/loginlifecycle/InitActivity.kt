@@ -6,10 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import com.shardbytes.plasmoxy.juncc.loginlifecycle.login.CheckLoginTask
 import com.shardbytes.plasmoxy.juncc.loginlifecycle.model.CredentialsData
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.intentFor
-import org.jetbrains.anko.toast
-import org.jetbrains.anko.uiThread
+import org.jetbrains.anko.*
 
 class InitActivity : AppCompatActivity() {
 
@@ -25,7 +22,7 @@ class InitActivity : AppCompatActivity() {
         doAsync {
             
             // json ? too slow for ez usage, serialization ? rather not, default android ? yes
-            val pref = getPreferences(Context.MODE_PRIVATE)
+            val pref = getSharedPreferences("settings", Context.MODE_PRIVATE)
             
             val credentials = CredentialsData(
                     pref.getString("name", ""),
@@ -39,12 +36,15 @@ class InitActivity : AppCompatActivity() {
             }
             
             // here we should have credentials available, we try login with asynctask
-            CheckLoginTask(credentials) { result -> when (result) {
+            CheckLoginTask(credentials) { result -> uiThread { when (result) {
                 
-                "OK_LOGIN" -> toast("ok")
+                "OK_LOGIN" -> {
+                    toast("ok login, defaulting to loginscreen")
+                    launchLogin()
+                }
                 else -> launchLogin()
                 
-            }}.execute()
+            }}}.execute()
             
             
         }
