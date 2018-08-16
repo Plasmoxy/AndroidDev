@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        
+        <!-- do not use if drawer is under actionbar !!!, needs to be in separate styles file for api21+ if minapi is lower than 21 -->
+        <!-- <item name="android:statusBarColor">@android:color/transparent</item> -->
+    </style>
+    
+</resources>

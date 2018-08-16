@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/ic_account"
+            android:title="Account" />
+
+        <item
+            android:id="@+id/nav_info"
+            android:icon="@drawable/ic_info"
+            android:title="Info" />
+
+        <item
+            android:id="@+id/nav_photo"
+            android:icon="@drawable/ic_photo"
+            android:title="Photo" />
+
+    </group>
+
+    <!-- these will only do an action -->
+
+    <item android:title="Actions">
+        <menu>
+            <item
+                android:id="@+id/nav_message"
+                android:icon="@drawable/ic_message"
+                android:title="Message" />
+
+            <item
+                android:id="@+id/nav_faggot"
+                android:icon="@drawable/ic_faggot"
+                android:title="Faggot" />
+
+        </menu>
+    </item>
+
+
+</menu>
