@@ -1,9 +1,9 @@
 package io.github.plasmoxy.begin.notetoself
 
-class Note {
-    var title = ""
-    var description = ""
-    var idea = false
-    var todo = false
-    var important = false
-}
+data class Note(
+    var title : String = "",
+    var description : String = "",
+    var idea : Boolean = false,
+    var todo : Boolean = false,
+    var important : Boolean = false
+)

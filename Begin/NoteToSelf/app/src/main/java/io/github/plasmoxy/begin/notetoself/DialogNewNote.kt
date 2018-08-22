@@ -5,6 +5,7 @@ import android.app.Dialog
 import android.app.DialogFragment
 import android.os.Bundle
 import android.view.View
+import kotlinx.android.synthetic.main.dialog_new_note.*
 
 class DialogNewNote : DialogFragment() {
     
@@ -14,14 +15,27 @@ class DialogNewNote : DialogFragment() {
     override fun getView() = coreView // for kotlin synthetic
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        
+        buttonCancel.setOnClickListener { dismiss() }
+        
+        buttonOk.setOnClickListener { 
+            
+            (activity as MainActivity).createNewNote(Note(
+                    editTextNoteTitle.text.toString(),
+                    editTextNoteDescription.text.toString(),
+                    checkBoxIdea.isChecked,
+                    checkBoxTodo.isChecked,
+                    checkBoxImportant.isChecked
+            ))
+            
+            dismiss()
+            
+        }
+        
         return AlertDialog.Builder(activity)
                 .setView(coreView)
-                .setMessage("Add new note")
+                .setMessage("Add new notee")
                 .create()
-    }
-
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
-        
     }
     
 }
