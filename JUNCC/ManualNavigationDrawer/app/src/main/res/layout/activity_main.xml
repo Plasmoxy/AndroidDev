@@ -7,6 +7,7 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -17,36 +18,36 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
         <!-- hamburger is here beware !!! -->
-        
+
         <!-- two overlapping layouts that fix the hamburger padding -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            
+
             <!-- center text, padded by HARDCODEDD hamburger size xDD -->
             <RelativeLayout
-                android:layout_marginEnd="65dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginEnd="65dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:text="GymLipany"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
-                
+                    android:textStyle="bold" />
+
             </RelativeLayout>
-            
+
             <!-- left toolbar -->
             <LinearLayout
-                android:layout_alignParentEnd="true"
-                android:paddingRight="16dp"
-                android:orientation="horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal"
+                android:paddingRight="16dp">
 
                 <TextView
                     android:id="@+id/textToolbarCredit"
@@ -55,13 +56,12 @@
                     android:gravity="center"
                     android:text="3.14€"
                     android:textSize="18sp" />
-                
+
             </LinearLayout>
         </RelativeLayout>
-        
+
     </android.support.v7.widget.Toolbar>
-    
-    
+
     <android.support.v4.widget.DrawerLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

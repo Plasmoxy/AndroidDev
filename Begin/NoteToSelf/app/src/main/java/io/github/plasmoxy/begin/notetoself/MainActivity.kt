@@ -1,25 +1,39 @@
 package io.github.plasmoxy.begin.notetoself
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.alert
-import org.jetbrains.anko.okButton
-import org.jetbrains.anko.yesButton
+import android.support.v7.app.AppCompatActivity
+import android.view.Menu
+import android.view.MenuItem
 
 class MainActivity : AppCompatActivity() {
+    
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        
+        
+        
+    }
 
-        buttonTestDialog.setOnClickListener {
-            DialogNewNote().show(fragmentManager, "newnote")
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            
+            R.id.action_add_note -> {
+                DialogNewNote().show(supportFragmentManager, "newnote")
+            }
+            
         }
+        return super.onOptionsItemSelected(item)
     }
 
     fun createNewNote(note: Note) {
-        alert(note.toString()) { okButton {} }.show()
+        
     }
 
 }
