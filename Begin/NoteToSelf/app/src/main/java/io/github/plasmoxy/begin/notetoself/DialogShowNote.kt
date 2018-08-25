@@ -17,10 +17,12 @@ class DialogShowNote : DialogFragment() {
     
     // note to show, assign externally !!
     lateinit var note: Note
+    lateinit var onDelete : () -> Unit
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         
         buttonOk.setOnClickListener { dismiss() }
+        buttonDelete.setOnClickListener { onDelete() }
         
         textViewNoteTitle.text = note.title
         textViewNoteDescription.text = note.description

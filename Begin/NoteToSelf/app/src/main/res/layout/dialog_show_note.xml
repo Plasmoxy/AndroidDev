@@ -1,73 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
 
-    <ImageView
-        android:id="@+id/iconImportant"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_warning_black_24dp" />
+        android:orientation="horizontal">
 
-    <ImageView
-        android:id="@+id/iconTodo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toEndOf="@+id/iconImportant"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_check_box_black_24dp" />
+        <ImageView
+            android:id="@+id/iconImportant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
+            android:layout_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_warning_black_24dp" />
 
-    <ImageView
-        android:id="@+id/iconIdea"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toEndOf="@+id/iconTodo"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_wb_incandescent_black_24dp" />
+        <ImageView
+            android:id="@+id/iconTodo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
+            android:layout_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/iconImportant"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_check_box_black_24dp" />
+
+        <ImageView
+            android:id="@+id/iconIdea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/iconTodo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_wb_incandescent_black_24dp" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textViewNoteTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="65dp"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
         android:text="@string/title_hint"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="24sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewNoteDescription"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Description"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNoteTitle" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="14sp" />
 
-    <Button
-        android:id="@+id/buttonOk"
-        android:layout_width="wrap_content"
-        android:layout_height="54dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/ok_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNoteDescription" />
-</android.support.constraint.ConstraintLayout>
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonOk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/ok_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.244"
+            app:layout_constraintStart_toEndOf="@+id/buttonDelete"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNoteDescription" />
+
+        <Button
+            android:id="@+id/buttonDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="delete"
+            app:layout_constraintStart_toStartOf="@+id/textViewNoteDescription"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNoteDescription" />
+    </LinearLayout>
+</LinearLayout>
