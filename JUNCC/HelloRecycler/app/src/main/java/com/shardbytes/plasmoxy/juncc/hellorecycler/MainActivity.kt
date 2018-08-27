@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         itemRecycler.setHasFixedSize(true)
         itemRecycler.layoutManager = LinearLayoutManager(this)
         itemAdapter = ItemAdapter(items) {
-            Toast.makeText(this, "item $it pressed !", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "item $it pressed!", Toast.LENGTH_SHORT).show()
             moreItems()
         }
         itemRecycler.adapter = itemAdapter
