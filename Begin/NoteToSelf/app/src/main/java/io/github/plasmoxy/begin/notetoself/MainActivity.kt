@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
+import android.view.Window
 import com.fasterxml.jackson.core.JsonParseException
 import com.fasterxml.jackson.databind.JsonMappingException
 import com.fasterxml.jackson.databind.ObjectMapper

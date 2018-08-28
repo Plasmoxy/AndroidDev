@@ -1,9 +1,10 @@
 package io.github.plasmoxy.begin.notetoself
 
-import android.app.AlertDialog
+
 import android.app.Dialog
 import android.os.Bundle
 import android.support.v4.app.DialogFragment
+import android.support.v7.app.AlertDialog
 import android.view.View
 
 import kotlinx.android.synthetic.main.dialog_show_note.*
@@ -31,7 +32,7 @@ class DialogShowNote : DialogFragment() {
         if (!note.idea) iconIdea.visibility = View.GONE
         if (!note.todo) iconTodo.visibility = View.GONE
         
-        return AlertDialog.Builder(activity)
+        return AlertDialog.Builder(activity!!)
                 .setView(view)
                 .create()
     }

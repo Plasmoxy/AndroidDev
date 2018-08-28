@@ -1,12 +1,13 @@
 package io.github.plasmoxy.begin.notetoself
 
-import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 import android.support.v4.app.DialogFragment
+import android.support.v7.app.AlertDialog
 import android.view.View
 import kotlinx.android.synthetic.main.dialog_new_note.*
 
+// note: USE v7 support AlertDialog or stuff will crash on kitkat ! always check if you're using support libraries
 
 class DialogNewNote : DialogFragment() {
     
@@ -16,9 +17,8 @@ class DialogNewNote : DialogFragment() {
     override fun getView() = coreView // reroute so kotlin synthetic works
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-
+        
         buttonCancel.setOnClickListener { dismiss() }
-
         buttonOk.setOnClickListener {
 
             (activity as MainActivity).createNewNote(Note(
@@ -33,9 +33,10 @@ class DialogNewNote : DialogFragment() {
             
         }
         
-        return AlertDialog.Builder(activity)
-                .setView(view)
+        return AlertDialog.Builder(activity!!)
                 .setMessage("Add new notee")
+                .setView(view)
                 .create()
+        
     }
 }
