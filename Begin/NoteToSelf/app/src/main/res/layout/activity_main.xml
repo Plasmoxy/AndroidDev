@@ -10,7 +10,25 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/noteRecycler"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="vertical" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabAddNote"
+        android:clickable="true"
+        android:focusable="true"
+        app:rippleColor="@color/colorAccent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp"
+        app:backgroundTint="@color/colorDark"
+        app:layout_constraintBottom_toBottomOf="@+id/noteRecycler"
+        app:layout_constraintEnd_toEndOf="@+id/noteRecycler"
+        app:srcCompat="@drawable/ic_add_black_24dp" />
+
 </android.support.constraint.ConstraintLayout>

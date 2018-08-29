@@ -3,7 +3,7 @@
     <color name="colorPrimary">#ffffff</color>
     <color name="colorPrimaryDark">#eeeeee</color>
     <color name="colorPrimaryDarkLegacy">#0e0e0e</color>
-    <color name="colorAccent">#ff006a</color>
+    <color name="colorAccent">#007bff</color>
     
     <color name="colorCoreBackground">#eeeeee</color>
     
@@ -11,5 +11,6 @@
     
     <color name="colorSecondary">#448aff</color>
     <color name="colorWarning">#f44336</color>
+    <color name="colorDark">#212121</color>
     
 </resources>

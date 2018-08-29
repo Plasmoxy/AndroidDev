@@ -53,6 +53,11 @@ class MainActivity : AppCompatActivity() {
             }.show(supportFragmentManager, "shownote")
         }
         
+        // fab
+        fabAddNote.setOnClickListener {
+            DialogNewNote().show(supportFragmentManager, "newnote")
+        }
+        
     }
 
     override fun onPause() {
@@ -67,10 +72,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            
-            R.id.action_add_note -> {
-                DialogNewNote().show(supportFragmentManager, "newnote")
-            }
             
             R.id.action_settings -> {
                 startActivity(intentFor<SettingsActivity>(
