@@ -1,13 +1,31 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat">
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkLegacy</item>
         <item name="colorAccent">@color/colorAccent</item>
         
         <item name="cardViewStyle">@style/CardView</item>
     </style>
+    
+    <style name="ButtonPrimary">
+        <item name="colorButtonNormal">@color/colorPrimary</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+    </style>
+    
+    
+    <style name="ButtonSecondary">
+        <item name="colorButtonNormal">@color/colorSecondary</item>
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
 
+    <style name="ButtonWarning">
+        <item name="colorButtonNormal">@color/colorWarning</item>
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+    
 </resources>

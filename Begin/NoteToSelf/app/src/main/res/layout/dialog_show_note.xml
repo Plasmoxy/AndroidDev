@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/colorCoreBackground"
     android:orientation="vertical"
     android:padding="8dp">
 
@@ -77,6 +78,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/ok_button"
+            android:theme="@style/ButtonSecondary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.244"
             app:layout_constraintStart_toEndOf="@+id/buttonDelete"
@@ -88,6 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="delete"
+            android:theme="@style/ButtonWarning"
             app:layout_constraintStart_toStartOf="@+id/textViewNoteDescription"
             app:layout_constraintTop_toBottomOf="@+id/textViewNoteDescription" />
     </LinearLayout>

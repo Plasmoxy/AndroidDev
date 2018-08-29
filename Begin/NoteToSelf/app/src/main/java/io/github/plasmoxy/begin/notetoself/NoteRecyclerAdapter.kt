@@ -43,15 +43,18 @@ class NoteRecyclerAdapter(private val activity: MainActivity,
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = data[position]
+        
+        // update text in recycled view
         holder.title.text = item.title
         holder.description.text = item.description
         
-        if (!item.important) holder.important.visibility = View.GONE
-        if (!item.idea) holder.idea.visibility = View.GONE
-        if (!item.todo) holder.todo.visibility = View.GONE
+        // update image visibilities in recycled view
+        holder.important.visibility = if (item.important) View.VISIBLE else View.GONE
+        holder.idea.visibility = if (item.idea) View.VISIBLE else View.GONE
+        holder.todo.visibility = if (item.todo) View.VISIBLE else View.GONE
         
     }
-
+    
     override fun getItemCount() = data.size
 
 }
