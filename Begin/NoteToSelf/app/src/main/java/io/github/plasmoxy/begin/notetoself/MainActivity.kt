@@ -16,7 +16,7 @@ import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
     
-    private lateinit var notes : MutableList<Note>
+    private var notes = mutableListOf<Note>()
     private lateinit var noteAdapter : NoteRecyclerAdapter
     
     private lateinit var jsonMapper: ObjectMapper
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         // setup
         notesJsonFile = File(filesDir, "notes.json")
         jsonMapper = ObjectMapper()
-
+        
         // load notes
         loadNotes()
         
@@ -43,19 +43,26 @@ class MainActivity : AppCompatActivity() {
         
         // setup adapter listeners
         noteAdapter.onItemClick = {
-            DialogShowNote().apply {
+            DialogEditNote().apply {
                 note = notes[it]
                 onDelete = {
                     notes.removeAt(it)
                     noteAdapter.notifyDataSetChanged()
-                    dismiss()
+                }
+                onOk = { note ->
+                    notes[it] = note
+                    noteAdapter.notifyDataSetChanged()
                 }
             }.show(supportFragmentManager, "shownote")
         }
         
         // fab
         fabAddNote.setOnClickListener {
-            DialogNewNote().show(supportFragmentManager, "newnote")
+            DialogEditNote().apply {
+                onOk = { note ->
+                    createNewNote(note)
+                }
+            }.show(supportFragmentManager, "newnote")
         }
         
     }
@@ -95,15 +102,12 @@ class MainActivity : AppCompatActivity() {
             is JsonParseException, is IOException, is JsonMappingException -> {
                 if (ex is IOException) toast("created new notes file")
                 else toast("corrupted data, created new notes file")
-
+                
                 notesJsonFile.writeText("[]") // empty notes list
-                notes = mutableListOf()
             }
             else -> {
                 toast("Fatal error loading notes!")
-
                 notesJsonFile.writeText("[]")
-                notes = mutableListOf()
             }
         }}
     }

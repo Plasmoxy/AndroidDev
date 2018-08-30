@@ -8,8 +8,8 @@ import com.fasterxml.jackson.annotation.JsonProperty
 // however if it is part of the constructor, it will throw JsonMappingException if the field isn't in json as the construction is impossible
 
 data class Note(
-        @JsonProperty("title") var title : String,
-        @JsonProperty("description") var description: String,
+        @JsonProperty("title") var title : String = "",
+        @JsonProperty("description") var description: String = "",
         @JsonProperty("idea") var idea : Boolean = false,
         @JsonProperty("todo") var todo : Boolean = false,
         @JsonProperty("important") var important : Boolean = false
