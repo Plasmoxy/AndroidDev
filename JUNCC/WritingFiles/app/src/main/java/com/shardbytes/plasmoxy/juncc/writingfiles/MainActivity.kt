@@ -1,13 +1,16 @@
 package com.shardbytes.plasmoxy.juncc.writingfiles
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Environment
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
+import com.obsez.android.lib.filechooser.ChooserDialog
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.longToast
 import org.jetbrains.anko.toast
 import java.io.File
 
@@ -18,11 +21,14 @@ class MainActivity : AppCompatActivity() {
     val isExternalStorageWritable: Boolean get() =
         Environment.getExternalStorageState()==Environment.MEDIA_MOUNTED
     
-    
+    private lateinit var textfile: File
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        
+        // setup file
+        textfile = File(Environment.getExternalStorageDirectory(), "boi.txt")
         
         buttonWritable.setOnClickListener { toast(if(isExternalStorageWritable) "yes" else "no") }
         
@@ -40,8 +46,20 @@ class MainActivity : AppCompatActivity() {
             requestMandatoryPermissions()
         }
         
+        buttonChoose.setOnClickListener {
+            ChooserDialog().with(this)
+                    .withFilter(true, true)
+                    .withStartFile(Environment.getExternalStorageDirectory().absolutePath)
+                    .withChosenListener { path, dir -> 
+                        textfile = File(dir, "boi.txt")
+                        toast("directory set!")
+                    }
+                    .build()
+                    .show()
+        }
+        
         buttonWrite.setOnClickListener { 
-            File(Environment.getExternalStorageDirectory(), "boi.txt").apply {
+            textfile.apply {
                 if (!exists()) createNewFile()
                 writeText(Math.random().toString())
             }
@@ -49,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         
         buttonRead.setOnClickListener {
             toast(
-                    File(Environment.getExternalStorageDirectory(), "boi.txt").readText()
+                    textfile.readText()
             )
         }
         

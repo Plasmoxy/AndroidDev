@@ -30,6 +30,12 @@
             android:text="request permission" />
 
         <Button
+            android:id="@+id/buttonChoose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose file" />
+
+        <Button
             android:id="@+id/buttonWrite"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
