@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/buttonWritable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Writable?" />
+
+        <Button
+            android:id="@+id/buttonPermCheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="check permission" />
+
+        <Button
+            android:id="@+id/buttonPermRequest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="request permission" />
+
+        <Button
+            android:id="@+id/buttonWrite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="write" />
+
+        <Button
+            android:id="@+id/buttonRead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="read" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
