@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#ffffff</color>
-    <color name="colorPrimaryDark">#eeeeee</color>
+    <color name="colorPrimaryDark">#ffffff</color>
     <color name="colorPrimaryDarkLegacy">#0e0e0e</color>
     <color name="colorAccent">#007bff</color>
     
-    <color name="colorCoreBackground">#eeeeee</color>
-    
-    <color name="colorButtonPrimary">#fafafa</color>
-    
-    <color name="colorSecondary">#448aff</color>
-    <color name="colorWarning">#f44336</color>
+    <color name="colorSecondary">#2196F3</color>
+    <color name="colorSuccess">#4CAF50</color>
+    <color name="colorWarning">#FF9800</color>
+    <color name="colorDanger">#F44336</color>
     <color name="colorDark">#212121</color>
-    
+
+    <color name="colorCoreBackground">#ffffff</color>
+    <color name="colorButtonPrimary">#fafafa</color>
 </resources>

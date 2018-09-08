@@ -20,13 +20,12 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabAddNote"
-        android:clickable="true"
-        android:focusable="true"
-        app:rippleColor="@color/colorAccent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="18dp"
-        app:backgroundTint="@color/colorDark"
+        android:clickable="true"
+        android:focusable="true"
+        app:backgroundTint="@color/colorSecondary"
         app:layout_constraintBottom_toBottomOf="@+id/noteRecycler"
         app:layout_constraintEnd_toEndOf="@+id/noteRecycler"
         app:srcCompat="@drawable/ic_add_black_24dp" />

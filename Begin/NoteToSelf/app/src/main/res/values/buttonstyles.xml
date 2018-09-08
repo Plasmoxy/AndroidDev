@@ -17,5 +17,11 @@
         <item name="colorControlHighlight">@color/colorPrimary</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
+
+    <style name="ButtonDanger" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/colorDanger</item>
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
     
 </resources>

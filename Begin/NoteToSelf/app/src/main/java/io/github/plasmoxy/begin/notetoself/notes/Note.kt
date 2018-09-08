@@ -1,4 +1,4 @@
-package io.github.plasmoxy.begin.notetoself
+package io.github.plasmoxy.begin.notetoself.notes
 
 import com.fasterxml.jackson.annotation.JsonProperty
 

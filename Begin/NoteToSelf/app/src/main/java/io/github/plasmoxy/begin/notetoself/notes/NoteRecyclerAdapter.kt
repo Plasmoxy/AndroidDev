@@ -1,5 +1,6 @@
-package io.github.plasmoxy.begin.notetoself
+package io.github.plasmoxy.begin.notetoself.notes
 
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -7,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import io.github.plasmoxy.begin.notetoself.MainActivity
+import io.github.plasmoxy.begin.notetoself.R
 
 class NoteRecyclerAdapter(private val activity: MainActivity,
                           private val data: MutableList<Note>) : RecyclerView.Adapter<NoteRecyclerAdapter.ItemViewHolder>() {
@@ -14,7 +17,8 @@ class NoteRecyclerAdapter(private val activity: MainActivity,
     var onItemClick : (position: Int) -> Unit = {}
     
     class ItemViewHolder(itemView: View, onItemClick: (Int) -> Unit) : RecyclerView.ViewHolder(itemView) {
-
+        
+        val card = itemView.findViewById<CardView>(R.id.noteCard)
         val title = itemView.findViewById<TextView>(R.id.textViewTitle)
         val description = itemView.findViewById<TextView>(R.id.textViewDescription)
         
@@ -23,7 +27,11 @@ class NoteRecyclerAdapter(private val activity: MainActivity,
         val important = itemView.findViewById<ImageView>(R.id.imageViewImportant)
         
         init {
-            itemView.findViewById<CardView>(R.id.noteCard).setOnClickListener {
+            // set styling
+            
+            
+            
+            card.setOnClickListener {
                 // if position is actually valid
                 if (adapterPosition != RecyclerView.NO_POSITION) {
                     onItemClick(adapterPosition)

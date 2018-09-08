@@ -8,6 +8,9 @@ import android.view.MenuItem
 import com.fasterxml.jackson.core.JsonParseException
 import com.fasterxml.jackson.databind.JsonMappingException
 import com.fasterxml.jackson.databind.ObjectMapper
+import io.github.plasmoxy.begin.notetoself.dialogs.DialogEditNote
+import io.github.plasmoxy.begin.notetoself.notes.Note
+import io.github.plasmoxy.begin.notetoself.notes.NoteRecyclerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.toast

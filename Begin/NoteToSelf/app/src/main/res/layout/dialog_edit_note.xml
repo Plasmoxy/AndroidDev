@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/title_hint"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/description_hint"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNoteTitle" />
@@ -83,7 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Delete"
-            android:theme="@style/ButtonWarning"
+            android:theme="@style/ButtonDanger"
             app:layout_constraintEnd_toStartOf="@+id/buttonOk"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/checkBoxTodo" />

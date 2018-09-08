@@ -1,10 +1,12 @@
-package io.github.plasmoxy.begin.notetoself
+package io.github.plasmoxy.begin.notetoself.dialogs
 
 import android.app.Dialog
 import android.os.Bundle
 import android.support.v4.app.DialogFragment
 import android.support.v7.app.AlertDialog
 import android.view.View
+import io.github.plasmoxy.begin.notetoself.notes.Note
+import io.github.plasmoxy.begin.notetoself.R
 import kotlinx.android.synthetic.main.dialog_edit_note.*
 
 // note: USE v7 support AlertDialog or stuff will crash on kitkat ! always check if you're using support libraries
