@@ -1,7 +1,6 @@
 package com.shardbytes.plasmoxy.juncc.writingfiles
 
 import android.Manifest
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Environment
@@ -10,7 +9,6 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import com.obsez.android.lib.filechooser.ChooserDialog
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.longToast
 import org.jetbrains.anko.toast
 import java.io.File
 
