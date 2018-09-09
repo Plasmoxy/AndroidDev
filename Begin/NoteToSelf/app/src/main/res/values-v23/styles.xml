@@ -10,6 +10,7 @@
         <item name="colorAccent">@color/colorAccent</item>
 
         <item name="cardViewStyle">@style/CardView</item>
+        <item name="actionBarStyle">@style/AppTheme.ActionBar</item>
         
         <item name="android:windowLightStatusBar">true</item>
     </style>

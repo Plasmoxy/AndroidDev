@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         
         <item name="cardViewStyle">@style/CardView</item>
+        <item name="actionBarStyle">@style/AppTheme.ActionBar</item>
     </style>
     
 </resources>
