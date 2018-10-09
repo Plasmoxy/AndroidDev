@@ -21,5 +21,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Fuel connections" />
+
+        <Button
+            android:id="@+id/buttonInstallTls12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="install tls 12 provider" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
