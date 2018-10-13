@@ -2,6 +2,8 @@ package com.shardbytes.architectureexample
 
 import android.app.Application
 import android.arch.lifecycle.LiveData
+import android.arch.lifecycle.MutableLiveData
+import android.arch.lifecycle.Observer
 import android.os.AsyncTask
 import org.jetbrains.anko.doAsync
 
@@ -15,6 +17,8 @@ class NoteRepository(application: Application) {
         noteDao = database.noteDao()
         allNotes = noteDao.getAllNotes()
     }
+    
+    // implement the operations on data ( here I add async )
     
     fun insert(note: Note) {
         doAsync { 
